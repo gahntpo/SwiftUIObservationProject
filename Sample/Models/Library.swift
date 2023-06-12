@@ -12,8 +12,7 @@ import Observation
     var books: [Book] = [Book(), Book(), Book()]
     
     var availableBooksCount: Int {
-        let unavailableBooks = books.filter { $0.isAvailable == false }
-        return books.count - unavailableBooks.count
+        books.filter(\.isAvailable).count
     }
 }
 
