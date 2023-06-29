@@ -13,9 +13,10 @@ struct LibraryItemView: View {
     
     var body: some View {
         _ = Self._printChanges()
+        
         return HStack(alignment: .firstTextBaseline) {
             Image(systemName: imageName)
-                .foregroundColor(Color.random)
+                .foregroundColor(Color.white)
             
             VStack(alignment: .leading) {
                 Text(book.title)
@@ -24,7 +25,7 @@ struct LibraryItemView: View {
             }
             
         }
-        //.background(Color.random)
+        .background(Color.random)
     }
 }
 
