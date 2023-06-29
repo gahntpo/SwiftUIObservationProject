@@ -8,7 +8,7 @@ The view that the app uses to edit the title of a book.
 import SwiftUI
 
 struct BookEditView: View {
-    @Bindable var book: Book
+    @Binding var book: Book
     @Environment(\.dismiss) private var dismiss
     
     var body: some View {
@@ -26,6 +26,13 @@ struct BookEditView: View {
                 Text("Book is available")
             }
             
+            Button {
+                book.isAvailable = false
+            } label: {
+                Text("set unaba")
+            }
+
+            
             Button("Close") {
                 dismiss()
             }
@@ -36,5 +43,5 @@ struct BookEditView: View {
 }
 
 #Preview {
-    BookEditView(book: Book())
+    BookEditView(book: .constant(Book()))
 }

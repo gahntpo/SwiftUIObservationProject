@@ -6,8 +6,8 @@ An observable data model for an author.
 */
 
 import SwiftUI
-import Observation
 
-@Observable final class Author: Identifiable {
+struct Author: Identifiable {
     var name = "Sample Author"
+    let id = UUID()
 }

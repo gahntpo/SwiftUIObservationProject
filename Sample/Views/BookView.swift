@@ -9,8 +9,10 @@ A view that displays the title of a book, as well as a button for editing the
 import SwiftUI
 
 struct BookView: View {
-    var book: Book
+    
+    @Binding var book: Book
     @State private var isEditorPresented = false
+    @EnvironmentObject var library: Library
     
     var body: some View {
         VStack {
@@ -30,11 +32,20 @@ struct BookView: View {
             }
         }
         .sheet(isPresented: $isEditorPresented) {
-            BookEditView(book: book)
+            BookEditView(book: $book)
         }
+        .toolbar(content: {
+            Button(role: .destructive) {
+                library.delete(book: book)
+            } label: {
+                Label("Delete", systemImage: "trash")
+            }
+
+        })
     }
 }
 
 #Preview {
-    BookView(book: Book())
+    BookView(book: .constant(Book()))
+        .environmentObject(Library())
 }
