@@ -46,6 +46,6 @@ struct BookView: View {
 }
 
 #Preview {
-    BookView(book: .constant(Book()))
+    BookView(book: .constant(Book(title: "title")))
         .environmentObject(Library())
 }

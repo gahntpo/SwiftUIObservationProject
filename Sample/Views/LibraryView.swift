@@ -11,24 +11,21 @@ struct LibraryView: View {
     @EnvironmentObject var library: Library
     
     var body: some View {
-        _ = Self._printChanges()
-      return NavigationView {
-          VStack {
-              Text("Books available: \(library.availableBooksCount)")
-              
-              List($library.books) { $book in
-                  NavigationLink {
-                      BookView(book: $book)
-                  } label: {
-                      LibraryItemView(book: book,
-                                      imageName: library.iconName(for: book))
-                      
-                      // TextField("book", text: $book.title)
-                      //     .background(Color.random)
-                  }
-              }
-          }
-          .navigationTitle("ObservableObject")
+        Self._printChanges()
+        
+        return NavigationView {
+            List($library.books) { $book in
+                NavigationLink {
+                    BookView(book: $book)
+                } label: {
+                    LibraryItemView(book: book,
+                                    imageName: library.iconName(for: book))
+                }
+            }
+            .navigationTitle("ObservableObject")
+            .toolbar(content: {
+                Text("Books available: \(library.availableBooksCount)")
+            })
         }
     }
 }

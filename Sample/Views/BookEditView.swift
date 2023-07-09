@@ -43,5 +43,5 @@ struct BookEditView: View {
 }
 
 #Preview {
-    BookEditView(book: .constant(Book()))
+    BookEditView(book: .constant(Book(title: "title")))
 }

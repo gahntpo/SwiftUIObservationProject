@@ -12,7 +12,7 @@ struct LibraryItemView: View {
     let imageName: String
     
     var body: some View {
-        _ = Self._printChanges()
+        Self._printChanges()
         
         return HStack(alignment: .firstTextBaseline) {
             Image(systemName: imageName)
@@ -30,5 +30,6 @@ struct LibraryItemView: View {
 }
 
 #Preview {
-    LibraryItemView(book: Book(), imageName: "book")
+    LibraryItemView(book: Book(title: "title"),
+                    imageName: "book")
 }

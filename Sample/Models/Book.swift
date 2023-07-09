@@ -8,7 +8,8 @@ An observable data model for a book.
 import SwiftUI
 
 struct Book: Identifiable {
-    var title = "Sample Book Title \(Int.random(in: 0...100))"
+    
+    var title: String
     var author = Author()
     var isAvailable = true
     let id = UUID()
