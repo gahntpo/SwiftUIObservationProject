@@ -6,9 +6,10 @@ A observable data model for a library that contains books.
 */
 
 import SwiftUI
+import Observation
 
-class Library: ObservableObject {
-    @Published var books: [Book] = Book.examples()
+@Observable class Library {
+    var books: [Book] = Book.examples()
     
     var availableBooksCount: Int {
         books.filter(\.isAvailable).count
@@ -28,3 +29,13 @@ class Library: ObservableObject {
     }
 }
 
+extension EnvironmentValues {
+    var library: Library {
+        get { self[LibraryKey.self] }
+        set { self[LibraryKey.self] = newValue }
+    }
+}
+
+private struct LibraryKey: EnvironmentKey {
+    static var defaultValue: Library = Library()
+}

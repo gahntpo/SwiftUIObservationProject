@@ -8,21 +8,21 @@ A view that lists the books available in the library.
 import SwiftUI
 
 struct LibraryView: View {
-    @EnvironmentObject var library: Library
+    @Environment(\.library) private var library
     
     var body: some View {
         Self._printChanges()
         
         return NavigationView {
-            List($library.books) { $book in
+            List(library.books) { book in
                 NavigationLink {
-                    BookView(book: $book)
+                    BookView(book: book)
                 } label: {
                     LibraryItemView(book: book,
                                     imageName: library.iconName(for: book))
                 }
             }
-            .navigationTitle("ObservableObject")
+            .navigationTitle("Observation")
             .toolbar(content: {
                 Text("Books available: \(library.availableBooksCount)")
             })
@@ -32,5 +32,5 @@ struct LibraryView: View {
 
 #Preview {
     LibraryView()
-        .environmentObject(Library())
+        .environment(\.library, Library())
 }

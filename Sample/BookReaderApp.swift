@@ -10,12 +10,12 @@ import SwiftUI
 
 @main
 struct BookReaderApp: App {
-    @StateObject private var library = Library()
+    @State private var library = Library()
     
     var body: some Scene {
         WindowGroup {
             LibraryView()
-                .environmentObject(library)
+                .environment(\.library, library)
         }
     }
 }

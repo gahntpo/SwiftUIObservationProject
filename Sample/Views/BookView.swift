@@ -10,9 +10,9 @@ import SwiftUI
 
 struct BookView: View {
     
-    @Binding var book: Book
+    var book: Book
     @State private var isEditorPresented = false
-    @EnvironmentObject var library: Library
+    @Environment(\.library) private var library
     
     var body: some View {
         VStack {
@@ -32,7 +32,7 @@ struct BookView: View {
             }
         }
         .sheet(isPresented: $isEditorPresented) {
-            BookEditView(book: $book)
+            BookEditView(book: book)
         }
         .toolbar(content: {
             Button(role: .destructive) {
@@ -46,6 +46,6 @@ struct BookView: View {
 }
 
 #Preview {
-    BookView(book: .constant(Book(title: "title")))
-        .environmentObject(Library())
+    BookView(book: Book(title: "title"))
+        .environment(\.library, Library())
 }
