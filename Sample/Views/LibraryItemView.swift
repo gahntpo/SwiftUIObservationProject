@@ -8,7 +8,9 @@ A view that shows book information in the library view's list.
 import SwiftUI
 
 struct LibraryItemView: View {
-    var book: Book
+
+    let bookTitle: String
+    let bookAuthorName: String
     let imageName: String
     
     var body: some View {
@@ -19,8 +21,8 @@ struct LibraryItemView: View {
                 .foregroundColor(Color.white)
             
             VStack(alignment: .leading) {
-                Text(book.title)
-                Text("Written by: \(book.author.name)")
+                Text(bookTitle)
+                Text("Written by: \(bookAuthorName)")
                     .font(.caption)
             }
             
@@ -30,6 +32,7 @@ struct LibraryItemView: View {
 }
 
 #Preview {
-    LibraryItemView(book: Book(title: "title"),
+    LibraryItemView(bookTitle: "title",
+                    bookAuthorName: "author",
                     imageName: "book")
 }

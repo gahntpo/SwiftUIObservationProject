@@ -18,8 +18,10 @@ struct LibraryView: View {
                 NavigationLink {
                     BookView(book: $book)
                 } label: {
-                    LibraryItemView(book: book,
+                    LibraryItemView(bookTitle: book.title,
+                                    bookAuthorName: book.author.name,
                                     imageName: library.iconName(for: book))
+                    TextField("test", text: $book.title)
                 }
             }
             .navigationTitle("ObservableObject")
