@@ -10,9 +10,13 @@ settings.
 otherwise, select an iOS device or simulator running iOS 17 or later.
 3. Build and run the app.
 
-> Note: To learn more about the features that this sample implements, see
+## Observation vs ObservableObject
+
+
+this project is originaly from the WWDC 2023
 [Managing model data in your app](https://developer.apple.com/documentation/swiftui/managing-model-data-in-your-app).
->
+
+I modified it to show the difference to the older data flow with ObservableObject. Check out this Youtube video where I discuss this in more detail: https://youtu.be/xcKT_wgq_EQ
 
 ![](/images/main.jpg)
 
