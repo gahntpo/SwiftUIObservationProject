@@ -29,7 +29,7 @@ struct BookEditView: View {
             Button {
                 book.isAvailable = false
             } label: {
-                Text("set unaba")
+                Text("set available")
             }
 
             
