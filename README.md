@@ -11,7 +11,7 @@ otherwise, select an iOS device or simulator running iOS 17 or later.
 3. Build and run the app.
 
 ## Observation vs ObservableObject
-
+The detailed description can be found in this blog post: [Simplifying Data Flow and Improving Performance in SwiftUI with Observation](https://www.swiftyplace.com/blog/swiftui-observation)
 
 this project is originaly from the WWDC 2023
 [Managing model data in your app](https://developer.apple.com/documentation/swiftui/managing-model-data-in-your-app).
