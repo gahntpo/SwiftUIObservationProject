@@ -1,4 +1,4 @@
-# Managing Model Data Sample
+# Managing Model Data for SwiftUI with the new Observation Feature 
 
 ## Configure the sample code project
 
@@ -12,3 +12,8 @@ otherwise, select an iOS device or simulator running iOS 17 or later.
 
 > Note: To learn more about the features that this sample implements, see
 [Managing model data in your app](https://developer.apple.com/documentation/swiftui/managing-model-data-in-your-app).
+>
+
+![](/images/main.jpg)
+
+![](/images/editor.jpg)
